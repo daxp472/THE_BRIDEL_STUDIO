@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /book
+Disallow: /api/
+
+Sitemap: https://thebridelstudio.vercel.app/sitemap.xml

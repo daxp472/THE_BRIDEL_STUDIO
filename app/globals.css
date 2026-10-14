@@ -1,0 +1,77 @@
+@import "tailwindcss";
+
+@theme {
+  --color-studio-ivory: #FDFBF7;
+  --color-studio-parchment: #F6F0E7;
+  --color-studio-maroon: #5B1924;
+  --color-studio-crimson: #7E2434;
+  --color-studio-brass: #C59B4B;
+  --color-studio-brass-light: #E8D3A2;
+  --color-studio-charcoal: #211C1D;
+  --color-studio-stone: #6E6562;
+  --color-studio-border: #E8DFD3;
+
+  --font-serif: var(--font-serif), "Cormorant Garamond", Georgia, serif;
+  --font-sans: var(--font-sans), "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-gujarati: var(--font-gujarati), "Noto Sans Gujarati", sans-serif;
+}
+
+:root {
+  --background: #FDFBF7;
+  --foreground: #211C1D;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+/* Gujarati script font override when in Gujarati mode */
+[lang="gu"] {
+  font-family: var(--font-gujarati), var(--font-sans);
+}
+
+/* Asymmetric editorial line accents */
+.editorial-line {
+  position: relative;
+}
+.editorial-line::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 40px;
+  height: 1px;
+  background-color: #C59B4B;
+}
+
+/* Accessible focus visible */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 2px solid #5B1924;
+  outline-offset: 3px;
+}
